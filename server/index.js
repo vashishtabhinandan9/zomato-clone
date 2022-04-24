@@ -1,16 +1,18 @@
 // Importing Env Variables
 require("dotenv").config();
 
+
 // Libraries
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-//import passport from "passport";
+import passport from "passport";
 
-// configs
-//import googleAuthConfig from "./config/google.config";
+//configs
+import googleAuthConfig from "./config/google.config";
 //import routeConfig from "./config/route.config";
 
+const session= require("express-session")
 // microservice routes
 import Auth from "./API/Auth";
 /*import Restaurant from "./API/Restaurant";
@@ -35,11 +37,16 @@ zomato.use(express.json());
 zomato.use(express.urlencoded({ extended: false }));
 zomato.use(helmet());
 zomato.use(cors());
-//zomato.use(passport.initialize());
-//zomato.use(passport.session());
+zomato.use(passport.initialize());
+zomato.use(session({
+  resave: false,
+  saveUninitialized: true,
+  secret: 'bla bla bla' 
+}));
+zomato.use(passport.session());
 
 // passport cofiguration
-//googleAuthConfig(passport);
+googleAuthConfig(passport);
 //routeConfig(passport);
 
 // Application Routes

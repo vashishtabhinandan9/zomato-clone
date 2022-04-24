@@ -2,7 +2,7 @@
 import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-//import passport from "passport";
+import passport from "passport";
 
 // Models
 import { UserModel } from "../../database/user";
@@ -58,11 +58,11 @@ Des       Google Signin
 Params    none
 Access    Public
 Method    GET  
-
+*/
 Router.get(
   "/google",
   passport.authenticate("google", {
-    scope: [
+    scope: [//scope is like permission , what exactly you need from google api
       "https://www.googleapis.com/auth/userinfo.profile",
       "https://www.googleapis.com/auth/userinfo.email",
     ],
@@ -75,17 +75,17 @@ Des       Google Signin Callback
 Params    none
 Access    Public
 Method    GET  
-
+*/
 Router.get(
   "/google/callback",
-  passport.authenticate("google", { failureRedirect: "/" }),
+  passport.authenticate("google", { failureRedirect: "/" }),//fauiluire redirefct is what happen if request failed
   (req, res) => {
-    return res.redirect(
-      `http://localhost:3000/google/${req.session.passport.user.token}`
+    return res.json(
+     {token:req.session.passport.user.token}
     );
   }
 );
-*/
+
 
 export default Router;
 
