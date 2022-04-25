@@ -15,13 +15,14 @@ import googleAuthConfig from "./config/google.config";
 const session= require("express-session")
 // microservice routes
 import Auth from "./API/Auth";
-/*import Restaurant from "./API/Restaurant";
+import Restaurant from "./API/Restaurant";
 import Food from "./API/Food";
+import Menu from "./API/menu";
 import Image from "./API/Image";
-import Order from "./API/orders";
+/*import Order from "./API/orders";
 import Reviews from "./API/reviews";
 import User from "./API/User";
-import Menu from "./API/menu";
+
 import MailService from "./API/Mail";
 import Payments from "./API/Payments";
 */
@@ -30,7 +31,7 @@ import ConnectDB from "./database/connection";
 
 const zomato = express();
 
-console.log(process.env);
+//console.log(process.env.GOOGLE_CLIENT_ID);
 
 // application middlewares
 zomato.use(express.json());
@@ -51,14 +52,15 @@ googleAuthConfig(passport);
 
 // Application Routes
 zomato.use("/auth", Auth);
-/*
+
 zomato.use("/restaurant", Restaurant);
 zomato.use("/food", Food);
+zomato.use("/menu", Menu);
 zomato.use("/image", Image);
-zomato.use("/order", Order);
+/*zomato.use("/order", Order);
 zomato.use("/reviews", Reviews);
 zomato.use("/user", User);
-zomato.use("/menu", Menu);
+
 zomato.use("/mail", MailService);
 zomato.use("/payments", Payments);
 */
