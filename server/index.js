@@ -19,10 +19,10 @@ import Restaurant from "./API/Restaurant";
 import Food from "./API/Food";
 import Menu from "./API/menu";
 import Image from "./API/Image";
-/*import Order from "./API/orders";
+import Order from "./API/orders";
 import Reviews from "./API/reviews";
 import User from "./API/User";
-
+/*
 import MailService from "./API/Mail";
 import Payments from "./API/Payments";
 */
@@ -57,10 +57,10 @@ zomato.use("/restaurant", Restaurant);
 zomato.use("/food", Food);
 zomato.use("/menu", Menu);
 zomato.use("/image", Image);
-/*zomato.use("/order", Order);
+zomato.use("/order", Order);
 zomato.use("/reviews", Reviews);
 zomato.use("/user", User);
-
+/*
 zomato.use("/mail", MailService);
 zomato.use("/payments", Payments);
 */
