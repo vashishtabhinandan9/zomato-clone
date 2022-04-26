@@ -10,7 +10,7 @@ import passport from "passport";
 
 //configs
 import googleAuthConfig from "./config/google.config";
-//import routeConfig from "./config/route.config";
+import routeConfig from "./config/route.config";
 
 const session= require("express-session")
 // microservice routes
@@ -48,7 +48,7 @@ zomato.use(passport.session());
 
 // passport cofiguration
 googleAuthConfig(passport);
-//routeConfig(passport);
+routeConfig(passport);
 
 // Application Routes
 zomato.use("/auth", Auth);

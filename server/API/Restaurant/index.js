@@ -5,14 +5,15 @@ import passport from "passport";
 // Database modal
 import { RestaurantModel } from "../../database/allModels";
 
-/*
+
 // validation
 import {
   ValidateRestaurantCity,
   ValidateRestaurantSearchString,
 } from "../../validation/restaurant";
+
 import { ValidateRestaurantId } from "../../validation/food";
-*/
+
 const Router = express.Router();
 
 /*
@@ -24,7 +25,7 @@ Method    GET
 */
 Router.get("/", async (req, res) => {
   try {
-    //await ValidateRestaurantCity(req.query);
+    await ValidateRestaurantCity(req.query);
     const { city } = req.query;
     const restaurants = await RestaurantModel.find({ city });
 

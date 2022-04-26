@@ -6,7 +6,7 @@ import passport from "passport";
 import { FoodModel } from "../../database/allModels";
 
 // Validation
-//import { ValidateRestaurantId, Validatecategory } from "../../validation/food";
+import { ValidateRestaurantId, Validatecategory } from "../../validation/food";
 
 const Router = express.Router();
 
@@ -19,7 +19,7 @@ Method    GET
 */
 Router.get("/r/:_id", async (req, res) => {
   try {
-    //await ValidateRestaurantId(req.params);
+    await ValidateRestaurantId(req.params);
 
     const { _id } = req.params;
     const foods = await FoodModel.find({ restaurant: _id });

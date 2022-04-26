@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema(
 );
 
 UserSchema.methods.generateJwtToken = function () {
-  return jwt.sign({ user: this._id.toString() }, "ZomatoAPP");
+  return jwt.sign({ user: this._id.toString() }, "ZomatoAPP");//zomatoapp is the secret key for jwt token
 };
 
 UserSchema.statics.findByEmailAndPhone = async ({ email, phoneNumber }) => {//for sign up
