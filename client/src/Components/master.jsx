@@ -2,9 +2,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 // components
-/*
+
 import Delivery from "./Delivery";
-import Dining from "./Dining";
+/*import Dining from "./Dining";
 import NightLife from "./NightLife";
 import Nutrition from "./Nutrition";
 */
@@ -13,7 +13,7 @@ const Master = () => {
   return (
     <div className="my-5">
 
-     {type}
+    { type === "delivery" && <Delivery />}
       
     </div>
   );
