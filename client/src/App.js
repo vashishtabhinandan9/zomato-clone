@@ -1,22 +1,25 @@
-import HomeLayoutHOC from "./HOC/Home.HOC";
+import { Route, Navigate, Routes } from "react-router-dom";
+
+// HOC
+import HomeLayoutHOC from "./HOC/Home.Hoc";
+
+// Component
 import Temp from "./Components/temp";
 import Master from "./Components/master";
 
+// pages
+import Home from "./Page/Home";
+
 function App() {
   return (
-  <>
-   <HomeLayoutHOC path="/" exact component={Temp} />
-   <HomeLayoutHOC path="/:type" exact component={Master} />
-  </>
+    <>
+      <Routes>
+      <Route path="/" exact element={<Navigate to="/delivery"  replace={true}/>}/>
+      
+      </Routes>
+     
+      <HomeLayoutHOC path="/:type" exact component={Home} />
+    </>
   );
 }
-
 export default App;
-// :type
-
-// delivery
-// dining
-// nightlife
-// nutrition
-
-// master -> type
