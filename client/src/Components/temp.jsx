@@ -2,7 +2,8 @@ import React from "react";
 
 const Temp =()=>{
     return <div>
-        hello temp
+        hello
+        <h1>temp</h1>
     </div>
 }
 
