@@ -1,9 +1,12 @@
 import React from "react";
-
+import { useLocation } from "react-router-dom";
 const Temp =()=>{
+    const loc= useLocation()
     return <div>
-        hello
-        <h1>temp</h1>
+        
+        <h1>hello temp</h1>
+        <p>{loc.pathname}</p>
+
     </div>
 }
 

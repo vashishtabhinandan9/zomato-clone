@@ -10,6 +10,7 @@ import Master from "./Components/master";
 
 // pages
 import Home from "./Page/Home";
+import Overview from "./Page/Restaurant/Overview";
 
 function App() {
   return (
@@ -18,10 +19,37 @@ function App() {
       <Route path="/" exact element={<Navigate to="/delivery"  replace={true}/>}/>
       
       </Routes>
+
+
+      <Routes>
+      <Route path="/restaurant/:id" exact element={<Navigate to="/restaurant/:id/overview"  replace={true}/>}/>
+      </Routes>
      
+
       <HomeLayoutHOC path="/:type" exact component={Home} />
       {/*<HomeLayoutHOC path="/" exact component={Temp} />*/}
-      <RestaurantLayoutHOC path="/restaurant/:id" exact component={Temp} />
+      <RestaurantLayoutHOC
+        path="/restaurant/:id/overview"
+        exact
+        component={Overview}
+      />
+      <RestaurantLayoutHOC
+        path="/restaurant/:id/order-online"
+        exact
+        component={Temp}
+      />
+      <RestaurantLayoutHOC path="/restaurant/:id/menu" exact component={Temp} />
+      <RestaurantLayoutHOC
+        path="/restaurant/:id/reviews"
+        exact
+        component={Temp}
+      />
+      <RestaurantLayoutHOC
+        path="/restaurant/:id/photos"
+        exact
+        component={Temp}
+      />
+
     </>
   );
 }
