@@ -5,7 +5,6 @@ import { MdContentCopy } from "react-icons/md";
 import { FaDirections } from "react-icons/fa";
 import Slider from "react-slick";
 import ReactStars from "react-rating-stars-component";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 // components
 import MenuCollection from "../../Components/restaurant/MenuCollection";

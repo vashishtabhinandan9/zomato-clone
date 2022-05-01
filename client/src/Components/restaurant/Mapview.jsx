@@ -3,8 +3,10 @@ import { MdContentCopy } from "react-icons/md";
 import { FaDirections } from "react-icons/fa";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
+
 //[12.988134202889283, 77.59405893120281]
 const Mapview = (props) => {
+  
   return (
     <>
       <div>
@@ -13,12 +15,13 @@ const Mapview = (props) => {
       </div>
       <div>
         <h4 className="text-xl font-medium">Direction</h4>
-        <div className="w-full h-48">
+        <div id ="map "className="w-full h-48">
           <MapContainer
             center={props.mapLocation}
             zoom={13}
             scrollWheelZoom={false}
           >
+           
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
