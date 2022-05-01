@@ -2,7 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
-export default function SignIn({ isOpen, setIsOpen }) {
+export default function SignUp({ isOpen, setIsOpen }) {
   function closeModal() {
     setIsOpen(false);
   }
@@ -51,14 +51,23 @@ export default function SignIn({ isOpen, setIsOpen }) {
                 ></Dialog.Title>
                 <div className="mt-2 flex flex-col gap-3 w-full">
                   <button className="py-2 justify-center rounded-lg flex items-center gap-2 w-full border border-gray-400 bg-white text-gray-700 hover:bg-gray-100">
-                    Signin With Google <FcGoogle />
+                    Sign up With Google <FcGoogle />
                   </button>
 
                   <form className="flex flex-col gap-3">
                     <div className=" w-full flex flex-col gap-2">
-                      <label htmlFor="email">Email</label>
+                      <label htmlFor="fullname">Fullname</label>
                       <input
                         type="text"
+                        id="fullname"
+                        placeholder="John Doe"
+                        className="w-full border border-gray-400 px-3 py-2 rounded-lg focus:outline-none focus:border-zomato-400"
+                      />
+                    </div>
+                    <div className=" w-full flex flex-col gap-2">
+                      <label htmlFor="email">Email</label>
+                      <input
+                        type="email"
                         id="email"
                         placeholder="email@email.com"
                         className="w-full border border-gray-400 px-3 py-2 rounded-lg focus:outline-none focus:border-zomato-400"
@@ -74,7 +83,7 @@ export default function SignIn({ isOpen, setIsOpen }) {
                       />
                     </div>
                     <div className="w-full  text-center bg-zomato-400 text-white py-2 rounded-lg">
-                      Sign in
+                      Sign up
                     </div>
                   </form>
                 </div>
